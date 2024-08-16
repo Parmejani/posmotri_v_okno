@@ -9,6 +9,7 @@ html {
 }
 
 .page {
+  display: flex;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -35,4 +36,164 @@ fieldset {
 ul,
 ol {
   list-style: none;
+}
+
+.content {
+  display: flex;
+  align-items: flex-end;
+  column-gap: 30px;
+  width: 1140px;
+  height: 534px;
+  margin: auto;
+}
+
+.result__video-container {
+  position: relative;
+  width: 711px;
+  height: 386px;
+  padding-bottom: 16px;
+}
+
+.result__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.search-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  column-gap: 40px;
+}
+
+.search-form__fieldset {
+  border: 0;
+}
+
+.search-form__fieldset-title {
+  margin-bottom: 5px;
+  font-weight: normal;
+  font-size: inherit;
+}
+
+.search-form__textfield {
+  width: 225px;
+  height: 27px;
+  border: 0;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  background: transparent;
+  appearance: none;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  justify-content: space-between;
+  width: 212px;
+  margin-bottom: 5px;
+}
+
+.search-form__label {
+  display: flex;
+}
+
+.search-form__pseudo-checkbox {
+  width: 19px;
+  height: 19px;
+  margin-right: 5px;
+  border: 1px solid white;
+}
+
+.search-form__submit-button {
+  width: 194px;
+  height: 34px;
+}
+
+.title {
+  margin-bottom: 26px;
+  font-family: Oswald, sans-serif;
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 94%;
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__list {
+  position: relative;
+  max-height: 298px;
+  overflow: auto;
+}
+
+.content__list-item:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.content__card-link {
+  color: inherit;
+}
+
+.content__video-card {
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.content__video-card-title {
+  font-family: Oswald, sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.content__video-card-description {
+  font-weight: 400;
+  line-height: 16.2px;
+}
+
+.content__video-card-thumbnail {
+  width: 45%;
+}
+
+.more-button {
+  width: 100%;
+  height: 34px;
+}
+
+
+/* Скрыть элемент */
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  inline-size: 1px;
+  block-size: 1px;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Кнопка */
+
+.button {
+  border: 1px solid white;
+  color: white;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: inherit;
+  background: transparent;
+}
+
+/* Кликабельные элементы для pointer'а */
+
+input,
+button,
+.search-form__pseudo-checkbox {
+  cursor: pointer;
 }
