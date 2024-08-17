@@ -41,7 +41,7 @@ ol {
 .content {
   display: flex;
   align-items: flex-end;
-  column-gap: 30px;
+  gap: 30px;
   width: 1140px;
   height: 534px;
   margin: auto;
@@ -63,16 +63,16 @@ ol {
 .search-form {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
   column-gap: 40px;
 }
 
 .search-form__fieldset {
-  border: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
 }
 
 .search-form__fieldset-title {
-  margin-bottom: 5px;
   font-weight: normal;
   font-size: inherit;
 }
@@ -80,69 +80,41 @@ ol {
 .search-form__textfield {
   width: 225px;
   height: 27px;
-  border: 0;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
-  color: inherit;
-  font-family: inherit;
-  font-size: inherit;
-  background: transparent;
-  appearance: none;
-}
-
-.search-form__textfield:focus {
-  outline: none;
-}
-
-.search-form__label:has(:focus-visible) {
-  outline: 1px solid white;
-  outline-offset: 1px;
 }
 
 .search-form__checkbox-list {
   display: flex;
   justify-content: space-between;
-  width: 212px;
-  margin-bottom: 5px;
-}
-
-.search-form__checkbox-list > label:hover {
-  text-decoration: underline;
+  min-width: 212px;
 }
 
 .search-form__label {
   display: flex;
+  gap: 5px;
 }
 
 .search-form__pseudo-checkbox {
-  position: relative;
+  display: inline-flex;
+  align-self: center;
   width: 19px;
   height: 19px;
-  margin-right: 5px;
   border: 1px solid white;
 }
 
-.search-form__checkbox:checked + span::after {
-  content: "";
-  position: absolute;
-  top: calc(50% - 7.5px);
-  left: calc(50% - 7.5px);
-  width: 15px;
-  height: 15px;
-  background-color: white;
-}
-
 .search-form__submit-button {
+  align-self: flex-end;
   width: 194px;
   height: 34px;
 }
 
 .content__details {
-  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .title {
-  margin-bottom: 26px;
   font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 75px;
@@ -156,7 +128,7 @@ ol {
 
 .content__list {
   position: relative;
-  max-height: 298px;
+  max-height: 300px;
   overflow: auto;
 }
 
@@ -164,23 +136,9 @@ ol {
   margin-bottom: 30px;
 }
 
-.content__video-card:hover {
-  text-decoration: underline;
-}
-
-.content__card-link:focus {
-  outline: none;
-}
-
-.content__card-link:focus-visible {
-  outline: 1px solid white;
-}
-
 .content__card-link {
   display: block;
-  margin: 3px;
-  padding-left: 3px;
-  color: inherit;
+  margin: 2px;
 }
 
 .content__card-link_current {
@@ -188,8 +146,10 @@ ol {
 }
 
 .content__video-card {
-  display: inline-flex;
+  display: flex;
   justify-content: space-between;
+  min-height: 107px;
+  padding-left: 3px;
 }
 
 .content__video-card-title {
@@ -225,15 +185,59 @@ ol {
   white-space: nowrap;
 }
 
-/* Кнопка */
+/* Сброс дефолтных стилей */
 
 button {
   border: 1px solid white;
-  color: white;
+  color: inherit;
   font-family: inherit;
   font-weight: 700;
   font-size: inherit;
   background: transparent;
+}
+
+input[type="text"] {
+  border: 0;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  padding: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  background: transparent;
+  appearance: none;
+}
+
+fieldset {
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Интерактив и доступность */
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__checkbox-list > .search-form__label:hover {
+  text-decoration: underline;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid white;
+  outline-offset: 1px;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  content: "";
+  width: 15px;
+  height: 15px;
+  margin: 1px 0 0 1px;
+  background-color: white;
 }
 
 button:focus {
@@ -251,6 +255,18 @@ button:hover {
 
 button:active {
   background-color: #545050;
+}
+
+.content__video-card:hover {
+  text-decoration: underline;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid white;
 }
 
 /* Кликабельные элементы для pointer'а */
