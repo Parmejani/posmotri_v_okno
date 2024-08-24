@@ -43,7 +43,6 @@ ol {
   align-items: flex-end;
   gap: 30px;
   width: 1140px;
-  height: 534px;
   margin: auto;
 }
 
@@ -51,7 +50,7 @@ ol {
   position: relative;
   width: 711px;
   height: 386px;
-  margin-bottom: 16px;
+  margin: 78px 0 16px 0;
 }
 
 .result__video {
@@ -115,6 +114,7 @@ ol {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-self: flex-start;
   height: 100%;
 }
 
@@ -124,6 +124,7 @@ ol {
   font-size: 75px;
   line-height: 94%;
   text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
 .content__accent {
